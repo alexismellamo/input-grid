@@ -1,0 +1,37 @@
+.grid {
+  display: grid;
+  --auto-grid-min-size: 180px;
+  grid-template-columns: repeat(auto-fill, minmax(calc(25% - 10px), 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 720px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(calc(50% - 10px), 1fr));
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .grid {
+    grid-template-columns: unset;
+  }
+}
+
+.input {
+  border: 1px solid black;
+  height: 40px;
+  font-size: 20px;
+  padding: 0 20px;
+  width: 100%;
+}
+
+input:read-only {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.input-error {
+  border-color: #ff0033;
+  background-color: #ff0033;
+  color: white;
+}
